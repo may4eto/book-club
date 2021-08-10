@@ -11,6 +11,7 @@ const App = () => {
   const [selectedBook, setSelectedBook] = useState(null)
   const [showPanel, setShowPanel] = useState(false)
   const [filteredBooks, setFilteredBooks] = useState([])
+  const [search, setSearch] = useState('')
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -43,6 +44,7 @@ const App = () => {
         )
       )
     }
+    setSearch(searchTerm)
   }
   const hasFiltered = filteredBooks.length !== books.length
   return (
@@ -55,7 +57,7 @@ const App = () => {
         books={filteredBooks}
         pickBook={pickBook}
         isPanelOpen={showPanel}
-        title={hasFiltered ? 'Search results' : 'All books'}
+        title={hasFiltered ? `Search results for "${search}"` : 'All books'}
       />
       <Transition in={showPanel} timeout={300}>
         {(state) => <DetailPanel book={selectedBook} closePanel={closePanel} state={state} />}
