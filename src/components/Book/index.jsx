@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Author, Title, Cover} from './styles'
+import {Container, Author, Title, Cover, NoCover} from './styles'
 
 const Book = ({book, pickBook, isLarge, colorCover}) => (
   <Container $isLarge={isLarge} onClick={() => pickBook(book)}>
