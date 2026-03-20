@@ -17,6 +17,19 @@ export const Cover = styled.img`
     filter: ${({$colorCover}) => (!$colorCover ? 'grayscale(0%)' : null)};
   }
 `
+export const NoCover = styled.div`
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 2/3;
+  background-color: #e0e0e0;
+  border: 2px solid #000;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 16px;
+`
 
 export const Title = styled.h3`
   font-size: ${({$isLarge}) => ($isLarge ? '42px' : '28px')};
